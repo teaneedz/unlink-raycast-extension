@@ -2,7 +2,7 @@ import { Clipboard, showToast, Toast } from "@raycast/api";
 import { exec } from "child_process";
 import { promisify } from "util";
 
-const execAsync = promisify(exec);
+
 
 interface CleanResult {
   cleanedContent: string;
@@ -51,7 +51,7 @@ function decodeTrackingUrl(url: string): string | null {
     // Look for suspiciously long Base64-like parameters
     const urlObj = new URL(url);
     for (const [, value] of urlObj.searchParams) {
-      if (value.length > 50 && /^[A-Za-z0-9+\/=]+$/.test(value)) {
+      if (value.length > 50 && /^[A-Za-z0-9+/=]+$/.test(value)) {
         try {
           const decoded = atob(value);
           // Try to find URLs in the decoded content
