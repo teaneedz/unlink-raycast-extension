@@ -6,6 +6,7 @@
   "icon": "extension-icon.png",
   "author": "teaneedz",
   "license": "MIT",
+	"categories": ["Developer Tools"],
   "commands": [
     {
       "name": "unlink",
